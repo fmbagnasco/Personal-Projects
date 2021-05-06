@@ -13,7 +13,7 @@ game = True
 while game:
     #set up of the computer variables
     coin = random.randint(0,1)
-    dice = str(random.randint(1,6))
+    dice = random.randint(1,6)
 
     #translate coin in str
     if coin == 0:
@@ -46,7 +46,7 @@ while game:
         print("Great choice!")
 
         #show what the computer chooses
-        print("The computer chooses: " + coin)
+        print("The coin lands on... " + coin + "!")
             
         if user_coin == coin:
             print("You guessed right! You won!")
@@ -78,18 +78,18 @@ while game:
     if game == "Dice":
         #prompt to select an input and set up user variable
         print("Please, select a number between 1 and 6:")
-        user_dice = input("--> ")
+        user_dice = int(input("--> "))
 
         #verify user input
-        while user_dice != "1" and user_dice != "2" and user_dice != "3" and user_dice != "4" and user_dice != "5" and user_dice != "6":
+        while (user_dice < 1) or (user_dice > 6):
             print("Invalid input.")
             print("Try again:")
-            user_dice = input("--> ")
+            user_dice = int(input("--> "))
 
         print("Great choice!")
 
         #show what the computer chooses
-        print("The computer chooses: " + dice)
+        print("The computer rolls: " + str(dice) + "!")
             
         if user_dice == dice:
             print("You guessed right! You won!")
